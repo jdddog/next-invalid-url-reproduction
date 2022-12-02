@@ -1,4 +1,13 @@
 /** @type {import("next").NextConfig} */
 module.exports = {
   reactStrictMode: true,
+  trailingSlash: true,
+  async rewrites() {
+    return [
+      {
+        source: "/country/{/}?",
+        destination: "/",
+      },
+    ];
+  },
 }
